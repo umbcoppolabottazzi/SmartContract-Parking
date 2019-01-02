@@ -1,0 +1,106 @@
+\begin{theindex}
+
+  \item {acquisto}
+    \subitem {Parking.\+c}, \hyperpage{13}
+  \item {addr}
+    \subitem {Parking.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {check\+Disp}
+    \subitem {Parking.\+c}, \hyperpage{12}
+  \item {constructor}
+    \subitem {Parking.\+c}, \hyperpage{12}
+  \item {coordinate}
+    \subitem {Posto}, \hyperpage{7}
+
+  \indexspace
+
+  \item {durata}
+    \subitem {Sosta}, \hyperpage{8}
+
+  \indexspace
+
+  \item {estensione}
+    \subitem {Parking.\+c}, \hyperpage{14}
+  \item {ether1}
+    \subitem {Parking.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {id\+Posto}
+    \subitem {Sosta}, \hyperpage{9}
+  \item {id\+Sosta}
+    \subitem {Posto}, \hyperpage{7}
+
+  \indexspace
+
+  \item {max\+Durata}
+    \subitem {Parking.\+c}, \hyperpage{15}
+  \item {max\+Time}
+    \subitem {Parking.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {n\+Posti}
+    \subitem {Parking.\+c}, \hyperpage{15}
+  \item {next\+Sosta}
+    \subitem {Sosta}, \hyperpage{9}
+
+  \indexspace
+
+  \item {ora}
+    \subitem {Sosta}, \hyperpage{8}
+  \item {own\+Addr}
+    \subitem {Parking.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {pago}
+    \subitem {Parking.\+c}, \hyperpage{13}
+  \item {Parking.\+c}, \hyperpage{11}
+    \subitem {acquisto}, \hyperpage{13}
+    \subitem {addr}, \hyperpage{15}
+    \subitem {check\+Disp}, \hyperpage{12}
+    \subitem {constructor}, \hyperpage{12}
+    \subitem {estensione}, \hyperpage{14}
+    \subitem {ether1}, \hyperpage{15}
+    \subitem {max\+Durata}, \hyperpage{15}
+    \subitem {max\+Time}, \hyperpage{15}
+    \subitem {n\+Posti}, \hyperpage{15}
+    \subitem {own\+Addr}, \hyperpage{15}
+    \subitem {pago}, \hyperpage{13}
+    \subitem {prenotazione}, \hyperpage{14}
+    \subitem {ricerca\+Posto}, \hyperpage{14}
+    \subitem {targa\+Prova}, \hyperpage{15}
+  \item {Posto}, \hyperpage{7}
+    \subitem {coordinate}, \hyperpage{7}
+    \subitem {id\+Sosta}, \hyperpage{7}
+    \subitem {prezzo}, \hyperpage{7}
+  \item {prenotazione}
+    \subitem {Parking.\+c}, \hyperpage{14}
+  \item {prezzo}
+    \subitem {Posto}, \hyperpage{7}
+
+  \indexspace
+
+  \item {ricerca\+Posto}
+    \subitem {Parking.\+c}, \hyperpage{14}
+
+  \indexspace
+
+  \item {Sosta}, \hyperpage{8}
+    \subitem {durata}, \hyperpage{8}
+    \subitem {id\+Posto}, \hyperpage{9}
+    \subitem {next\+Sosta}, \hyperpage{9}
+    \subitem {ora}, \hyperpage{8}
+    \subitem {targa}, \hyperpage{8}
+
+  \indexspace
+
+  \item {targa}
+    \subitem {Sosta}, \hyperpage{8}
+  \item {targa\+Prova}
+    \subitem {Parking.\+c}, \hyperpage{15}
+
+\end{theindex}

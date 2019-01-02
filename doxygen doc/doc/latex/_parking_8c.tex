@@ -1,0 +1,253 @@
+\hypertarget{_parking_8c}{}\section{Parking.\+c File Reference}
+\label{_parking_8c}\index{Parking.\+c@{Parking.\+c}}
+
+
+Questo è il contratto per un parcheggio sulla rete Ethereum. Il file definisce tutte le funzioni necessarie al funzionamento.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_posto}{Posto}}
+\begin{DoxyCompactList}\small\item\em struttura del posto \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_sosta}{Sosta}}
+\begin{DoxyCompactList}\small\item\em struttura della sosta \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_parking_8c_ab0c5b540f4447266e6cd2fb8519ef4a4}{constructor}} (address \+\_\+pay\+Account) public
+\begin{DoxyCompactList}\small\item\em Costruttore del contratto, viene chiamato solo al momento del deploy. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{_parking_8c_af16d15f3a39b313de2a4d8806d2f4d33}{check\+Disp}} (uint \+\_\+ts\+Own, uint \+\_\+d\+Own, uint \+\_\+head\+Soste)
+\begin{DoxyCompactList}\small\item\em Controlla la disponibilità di un posto per un certo orario. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{_parking_8c_aeb68bd21794b980f0ed0daf3cd3a2a35}{pago}} (uint \+\_\+prezzo, uint \+\_\+id\+Sosta)
+\begin{DoxyCompactList}\small\item\em Permette di pagare la sosta. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{_parking_8c_a8336698419a8f62bf38bd6f4b5317072}{acquisto}} (uint \+\_\+d\+Own, uint \+\_\+id\+Posto, string \+\_\+targa)
+\begin{DoxyCompactList}\small\item\em Permette di acquistare una sosta in questo momento. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{_parking_8c_a130f6ee1f1b96ff83093782d1630011b}{prenotazione}} (uint \+\_\+ts\+Own, uint \+\_\+d\+Own, uint \+\_\+id\+Posto, string \+\_\+targa)
+\begin{DoxyCompactList}\small\item\em Permette di acquistare una sosta per un momento futuro. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{_parking_8c_a91750138fc7cf972223c8883b8633a8e}{ricerca\+Posto}} (uint \+\_\+ts\+Own, uint \+\_\+d\+Own)
+\begin{DoxyCompactList}\small\item\em Permette di ricercare tutti i posti disponibili per un particolare orario. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{_parking_8c_a10f2bb9cabd59148a36386f025d589e3}{estensione}} (uint \+\_\+id\+Sosta, uint \+\_\+d\+Own)
+\begin{DoxyCompactList}\small\item\em Permette di estendere una sosta già acquistata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint \mbox{\hyperlink{_parking_8c_ab08e1104830e25d0f658d246b03a4d6a}{n\+Posti}} = 10
+\item 
+string \mbox{\hyperlink{_parking_8c_a474ebb68cc3dc454119b112ff12bc5c7}{targa\+Prova}} =\char`\"{}A\+B000\+CD\char`\"{}
+\item 
+uint \mbox{\hyperlink{_parking_8c_afdec97a1b7e714856c11fb2cf429ddee}{max\+Time}} = 10000000000
+\item 
+uint \mbox{\hyperlink{_parking_8c_a9df104ce47739256c9a759497b95d7fc}{max\+Durata}} = 86400
+\item 
+uint \mbox{\hyperlink{_parking_8c_afdfd03b710bb567b85185e490d0f6aa9}{ether1}} = 1000000000000000000
+\item 
+address \mbox{\hyperlink{_parking_8c_a860eb39c8c89bb69f3fb5b8ff9dac64b}{addr}}
+\item 
+address \mbox{\hyperlink{_parking_8c_aa1c8f02b72e1399894576d2046a5fa3d}{own\+Addr}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Questo è il contratto per un parcheggio sulla rete Ethereum. Il file definisce tutte le funzioni necessarie al funzionamento. 
+
+\begin{DoxyAuthor}{Author}
+Umberto Coppola Bottazzi, Alfonso Fezza 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+22-\/\+Ottobre-\/2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_parking_8c_ab0c5b540f4447266e6cd2fb8519ef4a4}\label{_parking_8c_ab0c5b540f4447266e6cd2fb8519ef4a4}} 
+\index{Parking.\+c@{Parking.\+c}!constructor@{constructor}}
+\index{constructor@{constructor}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{constructor()}{constructor()}}
+{\footnotesize\ttfamily constructor (\begin{DoxyParamCaption}\item[{address}]{\+\_\+pay\+Account }\end{DoxyParamCaption})}
+
+
+
+Costruttore del contratto, viene chiamato solo al momento del deploy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pay\+Account} & indirizzo dell\textquotesingle{}account che riceverà i pagamenti \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_parking_8c_af16d15f3a39b313de2a4d8806d2f4d33}\label{_parking_8c_af16d15f3a39b313de2a4d8806d2f4d33}} 
+\index{Parking.\+c@{Parking.\+c}!check\+Disp@{check\+Disp}}
+\index{check\+Disp@{check\+Disp}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{check\+Disp()}{checkDisp()}}
+{\footnotesize\ttfamily function check\+Disp (\begin{DoxyParamCaption}\item[{uint}]{\+\_\+ts\+Own,  }\item[{uint}]{\+\_\+d\+Own,  }\item[{uint}]{\+\_\+head\+Soste }\end{DoxyParamCaption})}
+
+
+
+Controlla la disponibilità di un posto per un certo orario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+ts\+Own} & timestamp dell\textquotesingle{}orario in cui si desidera il posto \\
+\hline
+{\em \+\_\+d\+Own} & durata della sosta \\
+\hline
+{\em \+\_\+head\+Soste} & riferimento alla testa della lista delle soste di un particolare posto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+i\+: indice della prima sosta che ha il ts maggiore di quello cercato 
+
+\+\_\+i\+Prev\+: indice della sosta precedente a quella trovata 
+
+\+\_\+disp\+: informazione sulla disponibilità del posto. Questo parametro può assumere i seguenti valori\+: \begin{DoxyItemize}
+\item true, se il posto è disponibile \item false, se il posto non è disponibile \end{DoxyItemize}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_parking_8c_aeb68bd21794b980f0ed0daf3cd3a2a35}\label{_parking_8c_aeb68bd21794b980f0ed0daf3cd3a2a35}} 
+\index{Parking.\+c@{Parking.\+c}!pago@{pago}}
+\index{pago@{pago}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{pago()}{pago()}}
+{\footnotesize\ttfamily function pago (\begin{DoxyParamCaption}\item[{uint}]{\+\_\+prezzo,  }\item[{uint}]{\+\_\+id\+Sosta }\end{DoxyParamCaption})}
+
+
+
+Permette di pagare la sosta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+prezzo} & costo in wei della sosta \\
+\hline
+{\em \+\_\+id\+Sosta} & id della sosta appena generato, usato come ricevuta di pagamento \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+res\+: informazione sulla riuscita del pagamento. Questo parametro può assumere i seguenti valori\+: \begin{DoxyItemize}
+\item true, se il pagamento è riuscito \item false, se il pagamento non è riuscito \end{DoxyItemize}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_parking_8c_a8336698419a8f62bf38bd6f4b5317072}\label{_parking_8c_a8336698419a8f62bf38bd6f4b5317072}} 
+\index{Parking.\+c@{Parking.\+c}!acquisto@{acquisto}}
+\index{acquisto@{acquisto}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{acquisto()}{acquisto()}}
+{\footnotesize\ttfamily function acquisto (\begin{DoxyParamCaption}\item[{uint}]{\+\_\+d\+Own,  }\item[{uint}]{\+\_\+id\+Posto,  }\item[{string}]{\+\_\+targa }\end{DoxyParamCaption})}
+
+
+
+Permette di acquistare una sosta in questo momento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+d\+Own} & durata della sosta \\
+\hline
+{\em \+\_\+id\+Posto} & indice del posto su cui si vuole sostare \\
+\hline
+{\em \+\_\+targa} & targa della macchina da parcheggiare \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_parking_8c_a130f6ee1f1b96ff83093782d1630011b}\label{_parking_8c_a130f6ee1f1b96ff83093782d1630011b}} 
+\index{Parking.\+c@{Parking.\+c}!prenotazione@{prenotazione}}
+\index{prenotazione@{prenotazione}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{prenotazione()}{prenotazione()}}
+{\footnotesize\ttfamily function prenotazione (\begin{DoxyParamCaption}\item[{uint}]{\+\_\+ts\+Own,  }\item[{uint}]{\+\_\+d\+Own,  }\item[{uint}]{\+\_\+id\+Posto,  }\item[{string}]{\+\_\+targa }\end{DoxyParamCaption})}
+
+
+
+Permette di acquistare una sosta per un momento futuro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+ts\+Own} & timestamp dell\textquotesingle{}orario in cui si desidera il posto \\
+\hline
+{\em \+\_\+d\+Own} & durata della sosta \\
+\hline
+{\em \+\_\+id\+Posto} & indice del posto su cui si vuole sostare \\
+\hline
+{\em \+\_\+targa} & targa della macchina da parcheggiare \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_parking_8c_a91750138fc7cf972223c8883b8633a8e}\label{_parking_8c_a91750138fc7cf972223c8883b8633a8e}} 
+\index{Parking.\+c@{Parking.\+c}!ricerca\+Posto@{ricerca\+Posto}}
+\index{ricerca\+Posto@{ricerca\+Posto}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{ricerca\+Posto()}{ricercaPosto()}}
+{\footnotesize\ttfamily function ricerca\+Posto (\begin{DoxyParamCaption}\item[{uint}]{\+\_\+ts\+Own,  }\item[{uint}]{\+\_\+d\+Own }\end{DoxyParamCaption})}
+
+
+
+Permette di ricercare tutti i posti disponibili per un particolare orario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+ts\+Own} & timestamp dell\textquotesingle{}orario in cui si desidera il posto \\
+\hline
+{\em \+\_\+d\+Own} & durata della sosta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vettore di posti liberi 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_parking_8c_a10f2bb9cabd59148a36386f025d589e3}\label{_parking_8c_a10f2bb9cabd59148a36386f025d589e3}} 
+\index{Parking.\+c@{Parking.\+c}!estensione@{estensione}}
+\index{estensione@{estensione}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{estensione()}{estensione()}}
+{\footnotesize\ttfamily function estensione (\begin{DoxyParamCaption}\item[{uint}]{\+\_\+id\+Sosta,  }\item[{uint}]{\+\_\+d\+Own }\end{DoxyParamCaption})}
+
+
+
+Permette di estendere una sosta già acquistata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id\+Sosta} & indice della sosta già acquistata \\
+\hline
+{\em \+\_\+d\+Own} & nuova durata durata della sosta \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_parking_8c_ab08e1104830e25d0f658d246b03a4d6a}\label{_parking_8c_ab08e1104830e25d0f658d246b03a4d6a}} 
+\index{Parking.\+c@{Parking.\+c}!n\+Posti@{n\+Posti}}
+\index{n\+Posti@{n\+Posti}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{n\+Posti}{nPosti}}
+{\footnotesize\ttfamily uint n\+Posti = 10}
+
+numero totale di posti nel parcheggio \mbox{\Hypertarget{_parking_8c_a474ebb68cc3dc454119b112ff12bc5c7}\label{_parking_8c_a474ebb68cc3dc454119b112ff12bc5c7}} 
+\index{Parking.\+c@{Parking.\+c}!targa\+Prova@{targa\+Prova}}
+\index{targa\+Prova@{targa\+Prova}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{targa\+Prova}{targaProva}}
+{\footnotesize\ttfamily string targa\+Prova =\char`\"{}A\+B000\+CD\char`\"{}}
+
+placeholder per la targa \mbox{\Hypertarget{_parking_8c_afdec97a1b7e714856c11fb2cf429ddee}\label{_parking_8c_afdec97a1b7e714856c11fb2cf429ddee}} 
+\index{Parking.\+c@{Parking.\+c}!max\+Time@{max\+Time}}
+\index{max\+Time@{max\+Time}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{max\+Time}{maxTime}}
+{\footnotesize\ttfamily uint max\+Time = 10000000000}
+
+timestamp usato come limite superiore \mbox{\Hypertarget{_parking_8c_a9df104ce47739256c9a759497b95d7fc}\label{_parking_8c_a9df104ce47739256c9a759497b95d7fc}} 
+\index{Parking.\+c@{Parking.\+c}!max\+Durata@{max\+Durata}}
+\index{max\+Durata@{max\+Durata}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{max\+Durata}{maxDurata}}
+{\footnotesize\ttfamily uint max\+Durata = 86400}
+
+durata in secondi di un giorno, usato come limite superiore \mbox{\Hypertarget{_parking_8c_afdfd03b710bb567b85185e490d0f6aa9}\label{_parking_8c_afdfd03b710bb567b85185e490d0f6aa9}} 
+\index{Parking.\+c@{Parking.\+c}!ether1@{ether1}}
+\index{ether1@{ether1}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{ether1}{ether1}}
+{\footnotesize\ttfamily uint ether1 = 1000000000000000000}
+
+valore in wei di 1 ether \mbox{\Hypertarget{_parking_8c_a860eb39c8c89bb69f3fb5b8ff9dac64b}\label{_parking_8c_a860eb39c8c89bb69f3fb5b8ff9dac64b}} 
+\index{Parking.\+c@{Parking.\+c}!addr@{addr}}
+\index{addr@{addr}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{addr}{addr}}
+{\footnotesize\ttfamily address addr}
+
+indirizzo del proprietario del parcheggio \mbox{\Hypertarget{_parking_8c_aa1c8f02b72e1399894576d2046a5fa3d}\label{_parking_8c_aa1c8f02b72e1399894576d2046a5fa3d}} 
+\index{Parking.\+c@{Parking.\+c}!own\+Addr@{own\+Addr}}
+\index{own\+Addr@{own\+Addr}!Parking.\+c@{Parking.\+c}}
+\subsubsection{\texorpdfstring{own\+Addr}{ownAddr}}
+{\footnotesize\ttfamily address own\+Addr}
+
+indirizzo del proprietario del parcheggio 
